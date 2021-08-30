@@ -13,7 +13,7 @@ const Wrapper = styled.header`
   padding-left: 20px;
   padding-right: 20px;
   justify-content: space-between;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 999;
 `;
