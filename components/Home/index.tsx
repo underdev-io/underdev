@@ -30,6 +30,10 @@ const Wrapper = styled.section`
 export const Home = () => (
   <Wrapper>
     <Logo />
-    <HeroUnit />
+    <HeroUnit
+      title={["development + active", "touch + human"]}
+      subtitle={["crafting ideas", "digital to the real"]}
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod nulla est, et pulvinar dui tincidunt quis."
+    />
   </Wrapper>
 );

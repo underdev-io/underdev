@@ -4,8 +4,12 @@ import BubbleImage from "./bubble.svg";
 
 export const Wrapper = styled.hgroup`
   max-width: 508px;
-  height: 237px;
+  height: 200px;
   position: relative;
+
+  @media (min-width: 992px) {
+    height: 237px;
+  }
 `;
 
 const Text = styled.h1`

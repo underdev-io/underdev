@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import TextTransition, { presets } from "react-text-transition";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.aside`
   display: flex;
@@ -13,6 +15,11 @@ const Line = styled.span`
   width: 100%;
   display: inline-block;
   margin-bottom: 28px;
+  display: none;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
 `;
 
 const Title = styled.h1`
@@ -39,15 +46,53 @@ const Description = styled.p`
   color: #707070;
 `;
 
-export const HeroUnit = () => (
-  <Wrapper>
-    <Line />
-    <Title>lorem ipsum dolor sit amet</Title>
-    <SubTitle>lorem ipsum dolor sit amet</SubTitle>
-    <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet felis
-      odio. Suspendisse eu sollicitudin tortor. Nullam fringilla sagittis quam
-      eu maximus. Mauris sollicitudin aliquam egestas.
-    </Description>
-  </Wrapper>
-);
+interface HeroUnitProps {
+  title: string | string[];
+  subtitle: string | string[];
+  description: string;
+}
+
+export const HeroUnit = ({ title = '', subtitle = '', description = '' }: HeroUnitProps) => {
+  const [indexTitle, setIndexTitle] = useState(0);
+  const [indexSubTitle, setSubTitle] = useState(0);
+
+  const TITLES = Array.isArray(title) ? title : [title];
+  const SUB_TITLES = Array.isArray(subtitle) ? subtitle : [subtitle];
+
+  useEffect(() => {
+    const intervalTitle = setInterval(
+      () => setIndexTitle((indexTitle) => indexTitle + 1),
+      3000 // every 3 seconds
+    );
+
+    const intervalSubTitle = setInterval(
+      () => setSubTitle((indexSubTitle) => indexSubTitle + 1),
+      7000
+    );
+    return () => {
+      clearTimeout(intervalTitle);
+      clearTimeout(intervalSubTitle);
+    };;
+  }, []);
+
+  return (
+    <Wrapper>
+      <Line />
+      <Title>
+        <TextTransition
+          text={TITLES[indexTitle % TITLES.length]}
+          springConfig={presets.wobbly}
+        />
+      </Title>
+      <SubTitle>
+        <TextTransition
+          text={SUB_TITLES[indexSubTitle % SUB_TITLES.length]}
+          springConfig={presets.wobbly}
+        />
+      </SubTitle>
+      <Description>
+        {description}
+      </Description>
+    </Wrapper>
+  );
+};
