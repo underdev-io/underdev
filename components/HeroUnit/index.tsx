@@ -32,11 +32,12 @@ const Title = styled.h1`
 const SubTitle = styled.h2`
   font-size: 42px;
   line-height: 1.25;
-  font-family: "Gordita Bold";
+  font-weight: bold;
   color: #707070;
   letter-spacing: 0.81px;
   margin-top: 14px;
   margin-bottom: 22px;
+  font-family: "Gordita Bold";
 `;
 
 const Description = styled.p`

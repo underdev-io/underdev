@@ -2,6 +2,11 @@ import Logo from "./logo.svg";
 import styled from "styled-components";
 import { MdMenu } from "react-icons/md";
 import { primary } from "../../config/theme";
+import Drawer from "@material-ui/core/Drawer";
+import { useState } from "react";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
 
 const Wrapper = styled.header`
   width: 100%;
@@ -40,15 +45,34 @@ const MenuButton = styled.button`
   }
 `;
 
-export const Header = () => (
-  <Wrapper>
-    <Title>
-      <TitleLink href="#" title="Underdev">
-        <TitleLinkImage src={Logo.src} alt="Underdev" />
-      </TitleLink>
-    </Title>
-    <MenuButton>
-      <MdMenu color={primary} size="48px" />
-    </MenuButton>
-  </Wrapper>
-);
+export const Header = () => {
+  const [visible, setVisible] = useState(false);
+
+  const handleOpen = () => {
+    setVisible(true);
+  };
+
+  const handleClose = () => {
+    setVisible(false);
+  };
+
+  return (
+    <Wrapper>
+      <Title>
+        <TitleLink href="#" title="Underdev">
+          <TitleLinkImage src={Logo.src} alt="Underdev" />
+        </TitleLink>
+      </Title>
+      <MenuButton onClick={handleOpen}>
+        <MdMenu color={primary} size="48px" />
+      </MenuButton>
+      <Drawer anchor="right" open={visible} onClose={handleClose}>
+        <List>
+          <ListItem button>
+            <ListItemText>dsad</ListItemText>
+          </ListItem>
+        </List>
+      </Drawer>
+    </Wrapper>
+  );
+};
