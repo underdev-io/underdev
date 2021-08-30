@@ -4,7 +4,7 @@ import { Logo, Wrapper as LogoWrapper } from "../Logo";
 
 const Wrapper = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 100px);
   min-height: 600px;
   display: flex;
   padding: 20px;
@@ -15,6 +15,15 @@ const Wrapper = styled.section`
     margin: 0 auto;
     margin-top: 40px;
     max-width: 280px;
+  }
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+    align-items: center;
+
+      ${LogoWrapper} {
+        max-width: 508px;
+      }
   }
 `;
 

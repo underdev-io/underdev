@@ -3,6 +3,9 @@ import styled from "styled-components";
 const Wrapper = styled.aside`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
 `;
 
 const Line = styled.span`

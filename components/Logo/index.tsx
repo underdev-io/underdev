@@ -26,6 +26,10 @@ const Bubble = styled.span`
 const BubbleImg = styled.img`
   width: 100%;
   max-width: 160px;
+
+  @media (min-width: 992px) {
+    max-width: 280px;
+  }
 `;
 
 export const Logo = () => (
