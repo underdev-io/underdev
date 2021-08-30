@@ -10,6 +10,7 @@ const HomePage: NextPage = (props: any) => {
         <title>Underdev</title>
         <meta name="description" content="Underdev." />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/gordita/style.css" />
       </Head>
       <Header />
       <Home />

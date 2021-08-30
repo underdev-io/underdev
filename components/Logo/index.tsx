@@ -4,7 +4,7 @@ import BubbleImage from "./bubble.svg";
 
 export const Wrapper = styled.hgroup`
   max-width: 508px;
-  max-height: 237px;
+  height: 237px;
   position: relative;
 `;
 
@@ -25,7 +25,7 @@ const Bubble = styled.span`
 
 const BubbleImg = styled.img`
   width: 100%;
-  max-width: 208px;
+  max-width: 160px;
 `;
 
 export const Logo = () => (

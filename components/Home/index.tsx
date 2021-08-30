@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HeroUnit } from "../HeroUnit";
 import { Logo, Wrapper as LogoWrapper } from "../Logo";
 
 const Wrapper = styled.section`
@@ -7,6 +8,7 @@ const Wrapper = styled.section`
   min-height: 600px;
   display: flex;
   padding: 20px;
+  flex-direction: column;
 
   ${LogoWrapper} {
     display: block;
@@ -19,5 +21,6 @@ const Wrapper = styled.section`
 export const Home = () => (
   <Wrapper>
     <Logo />
+    <HeroUnit />
   </Wrapper>
 );
