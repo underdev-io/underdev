@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Header } from '../components/Header'
+import { Home } from '../components/Home'
 
-const Home: NextPage = (props: any) => {
+const HomePage: NextPage = (props: any) => {
   return (
     <div>
       <Head>
@@ -11,8 +12,9 @@ const Home: NextPage = (props: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Home />
     </div>
-  )
-}
+  );;
+};
 
-export default Home
+export default HomePage;

@@ -13,6 +13,9 @@ const Wrapper = styled.header`
   padding-left: 20px;
   padding-right: 20px;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 `;
 
 const Title = styled.h1``;
