@@ -7,6 +7,7 @@ import { useState } from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import TextLogo from "../Logo/text.svg";
 
 const Wrapper = styled.header`
   width: 100%;
@@ -67,9 +68,22 @@ export const Header = () => {
         <MdMenu color={primary} size="48px" />
       </MenuButton>
       <Drawer anchor="right" open={visible} onClose={handleClose}>
-        <List>
-          <ListItem button>
-            <ListItemText>dsad</ListItemText>
+        <img src={TextLogo.src} alt="Underdev" />
+        <List style={{ width: 255 }} component="nav">
+          <ListItem component={"a"} href="#home" button>
+            <ListItemText>Home</ListItemText>
+          </ListItem>
+          <ListItem component={"a"} href="#about" button>
+            <ListItemText>About</ListItemText>
+          </ListItem>
+          <ListItem component={"a"} href="#clients" button>
+            <ListItemText>Clients</ListItemText>
+          </ListItem>
+          <ListItem component={"a"} href="#testimonials" button>
+            <ListItemText>Testimonials</ListItemText>
+          </ListItem>
+          <ListItem component={"a"} href="#contact" button>
+            <ListItemText>Contacts</ListItemText>
           </ListItem>
         </List>
       </Drawer>

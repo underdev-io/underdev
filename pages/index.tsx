@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Home } from '../components/Home'
+import { About } from "../components/About";
 
 const HomePage: NextPage = (props: any) => {
   return (
@@ -14,6 +15,7 @@ const HomePage: NextPage = (props: any) => {
       </Head>
       <Header />
       <Home />
+      <About />
     </div>
   );;
 };
