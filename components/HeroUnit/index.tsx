@@ -2,16 +2,16 @@ import styled from "styled-components";
 import TextTransition, { presets } from "react-text-transition";
 import { useEffect, useState } from "react";
 
-const Wrapper = styled.aside`
+export const Wrapper = styled.aside`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 420px;
+  max-width: 700px;
   margin: 0 auto;
 `;
 
 const Line = styled.span`
-  border-top: 1px solid #707070;
+  border-top: 1px solid #333;
   width: 100%;
   display: inline-block;
   margin-bottom: 28px;
@@ -25,7 +25,7 @@ const Line = styled.span`
 const Title = styled.h1`
   font-family: "Gordita Thin";
   font-size: 26px;
-  color: #707070;
+  color: #333;
   letter-spacing: -0.34px;
 `;
 
@@ -33,7 +33,7 @@ const SubTitle = styled.h2`
   font-size: 42px;
   line-height: 1.25;
   font-weight: bold;
-  color: #707070;
+  color: #333;
   letter-spacing: 0.81px;
   margin-top: 14px;
   margin-bottom: 22px;
@@ -44,7 +44,7 @@ const Description = styled.p`
   font-size: 18px;
   line-height: 1.7;
   font-family: "Gordita Regular";
-  color: #707070;
+  color: #333;
 `;
 
 interface HeroUnitProps {
@@ -73,7 +73,7 @@ export const HeroUnit = ({ title = '', subtitle = '', description = '' }: HeroUn
     return () => {
       clearTimeout(intervalTitle);
       clearTimeout(intervalSubTitle);
-    };;
+    };
   }, []);
 
   return (
@@ -91,9 +91,7 @@ export const HeroUnit = ({ title = '', subtitle = '', description = '' }: HeroUn
           springConfig={presets.wobbly}
         />
       </SubTitle>
-      <Description>
-        {description}
-      </Description>
+      <Description>{description}</Description>
     </Wrapper>
   );
 };
