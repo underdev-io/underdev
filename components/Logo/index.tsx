@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import TextImage from "./text.svg";
 import BubbleImage from "./bubble.svg";
-import { ParallaxLayer } from "@react-spring/parallax";
 
 export const Wrapper = styled.hgroup`
   max-width: 508px;
@@ -41,14 +40,10 @@ const BubbleImg = styled.img`
 export const Logo = () => (
   <Wrapper>
     <Text>
-      <ParallaxLayer offset={0.01} speed={1.5}>
-        <TextImg src={TextImage.src} alt="Underdev" />
-      </ParallaxLayer>
+      <TextImg src={TextImage.src} alt="Underdev" />
     </Text>
     <Bubble>
-      <ParallaxLayer offset={0} speed={0.5}>
-        <BubbleImg src={BubbleImage.src} alt="Underdev" />
-      </ParallaxLayer>
+      <BubbleImg src={BubbleImage.src} alt="Underdev" />
     </Bubble>
   </Wrapper>
 );

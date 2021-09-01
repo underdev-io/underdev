@@ -7,8 +7,7 @@ import TechImage from "./techs.svg";
 const Wrapper = styled.section`
   background-color: #00e9c5;
   width: 100%;
-  height: calc(100vh - 100px);
-  min-height: 600px;
+  min-height: 120vh;
   display: flex;
   padding: 50px;
   flex-direction: column;
@@ -24,11 +23,12 @@ const Wrapper = styled.section`
 
   ${HeroUnitWrapper} {
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   @media (min-width: 992px) {
     flex-direction: row;
+    min-height: 100vh;
 
     ${HeroUnitWrapper} {
       max-width: 600px;

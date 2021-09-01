@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { HeroUnit } from "../HeroUnit";
 import { Wrapper as HeroUnitWrapper } from "../HeroUnit";
-import { Logo, Wrapper as LogoWrapper } from "../Logo";
+import { Wrapper as LogoWrapper } from "../Logo";
+import { TextField, Button } from "@material-ui/core";
 
 const Wrapper = styled.section`
   background-color: #00e9c5;
   width: 100%;
-  height: calc(100vh - 100px);
-  min-height: 600px;
+  min-height: 100vh;
   display: flex;
   padding: 50px;
   flex-direction: column;
@@ -61,8 +61,29 @@ const TechList = styled.img`
   }
 `;
 
-const RightColumn = styled.div`
+const RightColumn = styled.form`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  input, legend span, label {
+    font-family: "Gordita Regular";
+  }
+  
+  button {
+    background: #FFF;
+    color: #222;
+    font-family: "Gordita Bold";
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
 
   @media (min-width: 992px) {
     padding: 40px;
@@ -76,6 +97,19 @@ const RightColumn = styled.div`
 export const Contact = () => (
   <Wrapper>
     <HeroUnit title="get in touch" subtitle="let's talk" />
-    <RightColumn>formulário aqui</RightColumn>
+    <RightColumn>
+      <TextField label="Name" fullWidth variant="outlined" />
+      <TextField label="E-mail" type="email" fullWidth variant="outlined" />
+      <TextField
+        multiline
+        minRows="10"
+        label="Message"
+        fullWidth
+        variant="outlined"
+      />
+      <Button variant="contained" color="primary" fullWidth>
+        Send contact
+      </Button>
+    </RightColumn>
   </Wrapper>
 );
