@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Logo from "./logo.svg";
 import styled from "styled-components";
 import { MdMenu } from "react-icons/md";
@@ -70,7 +71,7 @@ export const Header = () => {
       </MenuButton>
       <Drawer anchor="right" open={visible} onClose={handleClose}>
         <div style={{ textAlign: "center" }}>
-          <Image src={TextLogo.src} alt="Underdev" width="120" height="120" />
+          <img src={TextLogo.src} alt="Underdev" width="120" height="120" />
         </div>
         <List style={{ width: 255 }} component="nav">
           <ListItem component={"a"} href="#home" button>
