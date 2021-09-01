@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HeroUnit } from "../HeroUnit";
+import { HeroUnit, Line } from "../HeroUnit";
 import { Logo, Wrapper as LogoWrapper } from "../Logo";
 
 const Wrapper = styled.section`
@@ -10,9 +10,12 @@ const Wrapper = styled.section`
   padding: 20px;
   flex-direction: column;
 
+  ${Line} {
+    display: none;
+  }
+
   ${LogoWrapper} {
     display: block;
-    margin: 0 auto;
     margin-top: 40px;
     width: 100%;
     max-width: 280px;
@@ -22,7 +25,12 @@ const Wrapper = styled.section`
     flex-direction: row;
     align-items: center;
 
+    ${Line} {
+      display: block;
+    }
+
     ${LogoWrapper} {
+      margin: 0 auto;
       max-width: 508px;
     }
   }

@@ -11,16 +11,11 @@ export const Wrapper = styled.aside`
   position: relative;
 `;
 
-const Line = styled.span`
+export const Line = styled.span`
   border-top: 1px solid #333;
   width: 100%;
   display: inline-block;
   margin-bottom: 28px;
-  display: none;
-
-  @media (min-width: 992px) {
-    display: block;
-  }
 `;
 
 const Title = styled.h1`
