@@ -1,5 +1,6 @@
 import { AppProps } from "next/dist/shared/lib/router/router";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import "../public/gordita/style.css";
 
 const GlobalStyle = createGlobalStyle`
   * {

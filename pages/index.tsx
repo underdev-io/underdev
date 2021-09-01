@@ -1,8 +1,9 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { Header } from '../components/Header'
-import { Home } from '../components/Home'
+import type { NextPage } from "next";
+import Head from "next/head";
+import { Header } from "../components/Header";
+import { Home } from "../components/Home";
 import { About } from "../components/About";
+import { Contact } from "../components/Contact";
 
 const HomePage: NextPage = (props: any) => {
   return (
@@ -11,13 +12,13 @@ const HomePage: NextPage = (props: any) => {
         <title>Underdev</title>
         <meta name="description" content="Underdev." />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/gordita/style.css" />
       </Head>
       <Header />
       <Home />
       <About />
+      <Contact />
     </div>
-  );;
+  );
 };
 
 export default HomePage;

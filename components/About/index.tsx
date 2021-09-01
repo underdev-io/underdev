@@ -68,6 +68,9 @@ const RightColumn = styled.div`
 
   @media (min-width: 992px) {
     padding: 40px;
+  }
+
+  @media (min-width: 1200px) {
     width: 50%;
   }
 `;
