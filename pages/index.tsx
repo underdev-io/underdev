@@ -8,17 +8,19 @@ import { Contact } from "../components/Contact";
 
 const HomePage: NextPage = (props: any) => {
   return (
-    <Parallax pages={3}>
+    <>
       <Head>
         <title>Underdev</title>
         <meta name="description" content="Underdev." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Home />
-      <About />
-      <Contact />
-    </Parallax>
+      <Parallax style={{ height: "calc(100vh - 100px)" }} pages={3}>
+        <Home />
+        <About />
+        <Contact />
+      </Parallax>
+    </>
   );
 };
 

@@ -1,8 +1,7 @@
-import { MdDescription } from "react-icons/md";
 import styled from "styled-components";
 import { HeroUnit } from "../HeroUnit";
 import { Wrapper as HeroUnitWrapper } from "../HeroUnit";
-import { Logo, Wrapper as LogoWrapper } from "../Logo";
+import { Wrapper as LogoWrapper } from "../Logo";
 import TechImage from "./techs.svg";
 
 const Wrapper = styled.section`

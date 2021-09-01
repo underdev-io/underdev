@@ -7,6 +7,7 @@ import { useState } from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import Image from "next/image";
 import TextLogo from "../Logo/text.svg";
 
 const Wrapper = styled.header`
@@ -68,7 +69,9 @@ export const Header = () => {
         <MdMenu color={primary} size="48px" />
       </MenuButton>
       <Drawer anchor="right" open={visible} onClose={handleClose}>
-        <img src={TextLogo.src} alt="Underdev" />
+        <div style={{ textAlign: "center" }}>
+          <Image src={TextLogo.src} alt="Underdev" width="120" height="120" />
+        </div>
         <List style={{ width: 255 }} component="nav">
           <ListItem component={"a"} href="#home" button>
             <ListItemText>Home</ListItemText>
