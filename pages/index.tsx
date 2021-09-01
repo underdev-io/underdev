@@ -3,11 +3,12 @@ import Head from "next/head";
 import { Header } from "../components/Header";
 import { Home } from "../components/Home";
 import { About } from "../components/About";
+import { Parallax } from "@react-spring/parallax";
 import { Contact } from "../components/Contact";
 
 const HomePage: NextPage = (props: any) => {
   return (
-    <div>
+    <Parallax pages={3}>
       <Head>
         <title>Underdev</title>
         <meta name="description" content="Underdev." />
@@ -17,7 +18,7 @@ const HomePage: NextPage = (props: any) => {
       <Home />
       <About />
       <Contact />
-    </div>
+    </Parallax>
   );
 };
 

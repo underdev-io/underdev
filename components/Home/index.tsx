@@ -14,6 +14,7 @@ const Wrapper = styled.section`
     display: block;
     margin: 0 auto;
     margin-top: 40px;
+    width: 100%;
     max-width: 280px;
   }
 

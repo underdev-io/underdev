@@ -8,6 +8,7 @@ export const Wrapper = styled.aside`
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
+  position: relative;
 `;
 
 const Line = styled.span`
