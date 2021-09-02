@@ -47,7 +47,7 @@ const Text = styled.p`
   font-family: "Gordita Thin";
 
   @media (min-width: 992px) {
-    font-size: 20px;
+    font-size: 21px;
   }
 `;
 
@@ -77,19 +77,29 @@ const RightColumn = styled.div`
 export const About = () => (
   <Wrapper>
     <HeroUnit
-      title={["development + active", "touch + human"]}
-      subtitle={["crafting ideas", "digital to the real"]}
+      title={["We are goal diggers."]}
+      subtitle={["We believe that we can improve the world around us."]}
     />
     <RightColumn>
       <Text>
-        {
-          "Nós da Família UnderDev acreditamos que podemos  transformar o mundo a nossa volta, 1% todos os dias."
-        }
-        {
-          "Ultilizamos algumas das melhores tecnologias e buscamos ser lembrandos, "
-        }
-        {"como aqueles que realmente resolvem problemas, "}
-        {"Somos uma StartUp profissional e moderna, entre em contato!"}
+        <strong>We love</strong> to work with technology but also with the
+        people behind it. <br />
+        <br />
+        <strong>We are</strong> always looking for the solution to problems, be
+        small or worldwide.
+        <br />
+        <br />
+        <strong>We constantly</strong> challenge ourselves.
+        <br />
+        <br />
+        <strong>To do so,</strong> we count on highly skilled professionals in
+        some of the best technologies.
+        <br />
+        <br />
+        We have <strong>10+ years of experience</strong> working with{" "}
+        <strong>startups</strong> as well as <strong>large corporations</strong>
+        , in many different projects, and{" "}
+        <strong>we absolutely give our best</strong> in every and each of them.
       </Text>
       <TechList src={TechImage.src} />
     </RightColumn>

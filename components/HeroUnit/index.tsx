@@ -12,7 +12,7 @@ export const Wrapper = styled.aside`
 `;
 
 export const Line = styled.span`
-  border-top: 1px solid #333;
+  border-top: 1px solid #222;
   width: 100%;
   display: inline-block;
   margin-bottom: 28px;
@@ -21,7 +21,7 @@ export const Line = styled.span`
 const Title = styled.h1`
   font-family: "Gordita Thin";
   font-size: 26px;
-  color: #333;
+  color: #222;
   letter-spacing: -0.34px;
 `;
 
@@ -29,7 +29,7 @@ const SubTitle = styled.h2`
   font-size: 42px;
   line-height: 1.25;
   font-weight: bold;
-  color: #333;
+  color: #222;
   letter-spacing: 0.81px;
   margin-top: 14px;
   margin-bottom: 22px;
@@ -38,9 +38,13 @@ const SubTitle = styled.h2`
 
 const Description = styled.p`
   font-size: 18px;
-  line-height: 1.7;
-  font-family: "Gordita Regular";
-  color: #333;
+  line-height: 1.75;
+  font-family: "Gordita Thin";
+  color: #222;
+
+  @media (min-width: 992px) {
+    font-size: 21px;
+  }
 `;
 
 interface HeroUnitProps {

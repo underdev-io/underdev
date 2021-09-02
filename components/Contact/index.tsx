@@ -142,7 +142,10 @@ export const Contact = () => {
   return (
     <Wrapper>
       <Container>
-        <HeroUnit title="get in touch" subtitle="let's talk" />
+        <HeroUnit
+          title="We are curious to know you and your company better."
+          subtitle="Tell us how we can help you."
+        />
         <RightColumn onSubmit={handleSubmit}>
           <TextField
             value={name}
@@ -167,7 +170,7 @@ export const Contact = () => {
             required
             multiline
             minRows="10"
-            label="Message"
+            label="Tell us how we can help you."
             fullWidth
             variant="filled"
           />
