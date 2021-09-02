@@ -3,16 +3,19 @@ import { HeroUnit } from "../HeroUnit";
 import { Wrapper as HeroUnitWrapper } from "../HeroUnit";
 import { Wrapper as LogoWrapper } from "../Logo";
 import { TextField, Button } from "@material-ui/core";
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Paper from "@material-ui/core/Paper";
+import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const Wrapper = styled.section`
   background-color: #00e9c5;
   width: 100%;
   min-height: 100vh;
-  display: flex;
   padding: 50px;
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
   ${LogoWrapper} {
     display: block;
@@ -27,7 +30,7 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 992px) {
-    flex-direction: row;
+    justify-content: center;
 
     ${HeroUnitWrapper} {
       max-width: 600px;
@@ -36,28 +39,6 @@ const Wrapper = styled.section`
     ${LogoWrapper} {
       max-width: 508px;
     }
-  }
-`;
-
-const Text = styled.p`
-  max-width: 812px;
-  font-size: 18px;
-  line-height: 1.75;
-  font-family: "Gordita Thin";
-
-  @media (min-width: 992px) {
-    font-size: 20px;
-  }
-`;
-
-const TechList = styled.img`
-  width: 100%;
-  max-width: 520px;
-  align-self: center;
-  margin-top: 40px;
-
-  @media (min-width: 992px) {
-    margin-top: 80px;
   }
 `;
 
@@ -70,19 +51,17 @@ const RightColumn = styled.form`
   border-radius: 6px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  max-width: 820px;
+  margin-right: auto;
 
-  input, legend span, label {
+  input,
+  legend span,
+  label {
     font-family: "Gordita Regular";
   }
-  
-  button {
-    background: #FFF;
-    color: #222;
-    font-family: "Gordita Bold";
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.8);
-    }
+  button {
+    font-family: "Gordita Bold";
   }
 
   @media (min-width: 992px) {
@@ -94,22 +73,147 @@ const RightColumn = styled.form`
   }
 `;
 
-export const Contact = () => (
-  <Wrapper>
-    <HeroUnit title="get in touch" subtitle="let's talk" />
-    <RightColumn>
-      <TextField label="Name" fullWidth variant="outlined" />
-      <TextField label="E-mail" type="email" fullWidth variant="outlined" />
-      <TextField
-        multiline
-        minRows="10"
-        label="Message"
-        fullWidth
-        variant="outlined"
-      />
-      <Button variant="contained" color="primary" fullWidth>
-        Send contact
-      </Button>
-    </RightColumn>
-  </Wrapper>
-);
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+`;
+
+const Footer = styled.footer`
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  margin-top: 100px;
+  font-family: "Gordita Regular";
+`;
+
+const FooterText = styled.p`
+  font-size: 14px;
+  letter-spacing: 0.04em;
+`;
+
+const FooterList = styled.nav`
+  display: flex;
+  column-gap: 15px;
+  list-style-type: none;
+`;
+
+const FooterListItem = styled.a`
+  color: #222;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
+export const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+
+    setLoading(true);
+    await emailjs.send("service_lq6mvvq", "template_jqza7v9", {
+      from_name: name,
+      from_email: email,
+      from_message: message,
+    });
+
+    setLoading(false);
+    setSuccess(true);
+  };
+
+  return (
+    <Wrapper>
+      <Container>
+        <HeroUnit title="get in touch" subtitle="let's talk" />
+        <RightColumn onSubmit={handleSubmit}>
+          <TextField
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            required
+            label="Name"
+            fullWidth
+            variant="filled"
+          />
+          <TextField
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            required
+            label="E-mail"
+            type="email"
+            fullWidth
+            variant="filled"
+          />
+          <TextField
+            value={message}
+            onChange={(event) => setMessage(event.target.value)}
+            required
+            multiline
+            minRows="10"
+            label="Message"
+            fullWidth
+            variant="filled"
+          />
+          <Button type="submit" variant="contained" color="primary" fullWidth>
+            Send contact
+          </Button>
+          {(success || loading) && (
+            <Paper
+              style={{
+                padding: 10,
+                textAlign: "center",
+                fontFamily: "Gordita Regular",
+              }}
+            >
+              {loading && <CircularProgress />}
+              {success && "Thanks! We'll contact you soon. ✌️"}
+            </Paper>
+          )}
+        </RightColumn>
+      </Container>
+      <Footer>
+        <FooterText>
+          <strong>Underdev HQ</strong> Rua Portugal, 753, Higienópolis | Porto
+          Alegre, Brazil
+        </FooterText>
+        <FooterList>
+          <FooterListItem href="https://github.com/underdev-io" target="_blank">
+            <FaGithub size="36px" />
+          </FooterListItem>
+          <FooterListItem
+            href="https://medium.com/@underdev.io"
+            target="_blank"
+          >
+            <FaMedium size="36px" />
+          </FooterListItem>
+          {/* <FooterListItem href="#">
+            <FaInstagram size="36px" />
+          </FooterListItem> */}
+          <FooterListItem
+            href="https://www.linkedin.com/company/underdev-io/"
+            target="_blank"
+          >
+            <FaLinkedin size="36px" />
+          </FooterListItem>
+        </FooterList>
+      </Footer>
+    </Wrapper>
+  );
+};
