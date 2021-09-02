@@ -40,9 +40,23 @@ export const Home = () => (
   <Wrapper>
     <Logo />
     <HeroUnit
-      title={["development + active", "touch + human"]}
-      subtitle={["crafting ideas", "digital to the real"]}
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod nulla est, et pulvinar dui tincidunt quis."
+      title={[
+        "tech + human",
+        "development + ideas",
+        "fast communication + delivery",
+        "problem + solution",
+      ]}
+      subtitle={[
+        "crafting ideas",
+        "intuitive solutions",
+        "developing art",
+        "changing the world",
+      ]}
+      description="Let us bring you the best solutions while you can relax and focus on growing your business.
+      We are <strong>passionate about technology</strong> and convey new great projects to the digital world.
+      <br /><br />We are not <em>just another web and mobile development</em> company.<br />
+      We are also a <strong>startup to build great ideas</strong>.
+      <br /><br />During our <em>10+ years of experience</em>, we helped people and companies <strong>all over the world</strong> to achieve their goals and develop their full potential.<br /><br />We can help you too. 🚀"
     />
   </Wrapper>
 );

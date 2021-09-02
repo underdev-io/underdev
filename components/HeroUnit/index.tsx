@@ -91,7 +91,9 @@ export const HeroUnit = ({
           springConfig={presets.wobbly}
         />
       </SubTitle>
-      {description && <Description>{description}</Description>}
+      {description && (
+        <Description dangerouslySetInnerHTML={{ __html: description }} />
+      )}
     </Wrapper>
   );
 };
