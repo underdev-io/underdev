@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import { HeroUnit, Line } from "../HeroUnit";
+import { Wrapper as HeroUnitWrapper } from "../HeroUnit";
 import { Logo, Wrapper as LogoWrapper } from "../Logo";
 
 const Wrapper = styled.section`
   width: 100%;
-  height: calc(100vh - 100px);
-  min-height: 600px;
+  min-height: calc(100vh - 100px);
   display: flex;
   padding: 20px;
+  padding-bottom: 40px;
+  column-gap: 60px;
   flex-direction: column;
 
   ${Line} {
@@ -16,9 +18,19 @@ const Wrapper = styled.section`
 
   ${LogoWrapper} {
     display: block;
+    margin: 0 auto;
     margin-top: 40px;
     width: 100%;
     max-width: 280px;
+  }
+
+  ${HeroUnitWrapper} {
+    align-items: center;
+    text-align: center;
+
+    p {
+      text-align: left;
+    }
   }
 
   @media (min-width: 992px) {
@@ -33,11 +45,15 @@ const Wrapper = styled.section`
       margin: 0 auto;
       max-width: 508px;
     }
+    ${HeroUnitWrapper} {
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 `;
 
 export const Home = () => (
-  <Wrapper>
+  <Wrapper id="home">
     <Logo />
     <HeroUnit
       title={[

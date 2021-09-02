@@ -59,6 +59,16 @@ export const Header = () => {
     setVisible(false);
   };
 
+  const handleButton = (event: any) => {
+    event.preventDefault();
+    handleClose();
+    const el = document.querySelector(event.currentTarget.getAttribute("href"));
+
+    if (el) {
+      el.scrollIntoView();
+    }
+  };
+
   return (
     <Wrapper>
       <Title>
@@ -74,19 +84,34 @@ export const Header = () => {
           <img src={TextLogo.src} alt="Underdev" width="120" height="120" />
         </div>
         <List style={{ width: 255 }} component="nav">
-          <ListItem component={"a"} href="#home" button>
+          <ListItem component={"a"} href="#home" onClick={handleButton} button>
             <ListItemText>Home</ListItemText>
           </ListItem>
-          <ListItem component={"a"} href="#about" button>
+          <ListItem component={"a"} href="#about" onClick={handleButton} button>
             <ListItemText>About</ListItemText>
           </ListItem>
-          <ListItem component={"a"} href="#clients" button>
+          <ListItem
+            component={"a"}
+            href="#clients"
+            onClick={handleButton}
+            button
+          >
             <ListItemText>Clients</ListItemText>
           </ListItem>
-          <ListItem component={"a"} href="#testimonials" button>
+          <ListItem
+            component={"a"}
+            href="#testimonials"
+            onClick={handleButton}
+            button
+          >
             <ListItemText>Testimonials</ListItemText>
           </ListItem>
-          <ListItem component={"a"} href="#contact" button>
+          <ListItem
+            component={"a"}
+            href="#contact"
+            onClick={handleButton}
+            button
+          >
             <ListItemText>Contacts</ListItemText>
           </ListItem>
         </List>

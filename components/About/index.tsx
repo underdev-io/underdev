@@ -75,7 +75,7 @@ const RightColumn = styled.div`
 `;
 
 export const About = () => (
-  <Wrapper>
+  <Wrapper id="about">
     <HeroUnit
       title={["We are goal diggers."]}
       subtitle={["We believe that we can improve the world around us."]}

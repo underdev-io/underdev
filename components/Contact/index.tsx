@@ -13,7 +13,7 @@ const Wrapper = styled.section`
   background-color: #00e9c5;
   width: 100%;
   min-height: 100vh;
-  padding: 50px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
 
@@ -26,7 +26,7 @@ const Wrapper = styled.section`
 
   ${HeroUnitWrapper} {
     max-width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   @media (min-width: 992px) {
@@ -79,6 +79,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  column-gap: 60px;
 
   @media (min-width: 992px) {
     flex-direction: row;
@@ -89,6 +90,8 @@ const Footer = styled.footer`
   width: 100%;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  row-gap: 50px;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #222;
@@ -100,6 +103,7 @@ const Footer = styled.footer`
 const FooterText = styled.p`
   font-size: 14px;
   letter-spacing: 0.04em;
+  text-align: center;
 `;
 
 const FooterList = styled.nav`
@@ -140,7 +144,7 @@ export const Contact = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="contact">
       <Container>
         <HeroUnit
           title="We are curious to know you and your company better."
