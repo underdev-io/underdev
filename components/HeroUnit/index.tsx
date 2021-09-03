@@ -2,13 +2,18 @@ import styled from "styled-components";
 import TextTransition, { presets } from "react-text-transition";
 import { useEffect, useState } from "react";
 
-export const Wrapper = styled.aside`
+interface WrapperProps {
+  alignItems?: string;
+}
+
+export const Wrapper = styled.aside<WrapperProps>`
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
   position: relative;
+  align-items: ${(props) => props.alignItems};
 `;
 
 export const Line = styled.span`
@@ -51,12 +56,14 @@ interface HeroUnitProps {
   title: string | string[];
   subtitle: string | string[];
   description?: string;
+  alignItems?: string;
 }
 
 export const HeroUnit = ({
   title = "",
   subtitle = "",
   description = "",
+  alignItems = "",
 }: HeroUnitProps) => {
   const [indexTitle, setIndexTitle] = useState(0);
   const [indexSubTitle, setSubTitle] = useState(0);
@@ -81,7 +88,7 @@ export const HeroUnit = ({
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper alignItems = {alignItems}>
       <Line />
       <Title>
         <TextTransition
