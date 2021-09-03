@@ -72,7 +72,7 @@ export const Header = () => {
   return (
     <Wrapper>
       <Title>
-        <TitleLink href="#" title="Underdev">
+        <TitleLink href="#home" title="Underdev">
           <TitleLinkImage src={Logo.src} alt="Underdev" />
         </TitleLink>
       </Title>

@@ -48,8 +48,8 @@ const Description = styled.p`
 `;
 
 interface HeroUnitProps {
-  title: string | string[];
-  subtitle: string | string[];
+  title?: string | string[];
+  subtitle?: string | string[];
   description?: string;
 }
 
@@ -83,18 +83,22 @@ export const HeroUnit = ({
   return (
     <Wrapper>
       <Line />
-      <Title>
-        <TextTransition
-          text={TITLES[indexTitle % TITLES.length]}
-          springConfig={presets.wobbly}
-        />
-      </Title>
-      <SubTitle>
-        <TextTransition
-          text={SUB_TITLES[indexSubTitle % SUB_TITLES.length]}
-          springConfig={presets.wobbly}
-        />
-      </SubTitle>
+      {title && (
+        <Title>
+          <TextTransition
+            text={TITLES[indexTitle % TITLES.length]}
+            springConfig={presets.wobbly}
+          />
+        </Title>
+      )}
+      {subtitle && (
+        <SubTitle>
+          <TextTransition
+            text={SUB_TITLES[indexSubTitle % SUB_TITLES.length]}
+            springConfig={presets.wobbly}
+          />
+        </SubTitle>
+      )}
       {description && (
         <Description dangerouslySetInnerHTML={{ __html: description }} />
       )}
