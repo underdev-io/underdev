@@ -192,7 +192,7 @@ export const About = () => (
           <br />
           <br />A percentage of your buy is reverted to existing social projects
           as well as some of our own projects, like donating computers and
-          cellphones for those in need!"
+          cellphones for those in need!
         </Text>
       </RightColumn>
     </Wrapper>
