@@ -155,7 +155,7 @@ export const Contact = () => {
             value={name}
             onChange={(event) => setName(event.target.value)}
             required
-            label="Name"
+            label="Your name"
             fullWidth
             variant="filled"
           />
@@ -163,7 +163,7 @@ export const Contact = () => {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             required
-            label="E-mail"
+            label="Your best e-mail"
             type="email"
             fullWidth
             variant="filled"

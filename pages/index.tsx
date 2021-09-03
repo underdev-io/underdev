@@ -16,8 +16,8 @@ const HomePage: NextPage = (props: any) => {
       <Header />
       <Home />
       <About />
-      <Contact />
       <Client />
+      <Contact />
     </>
   );
 };

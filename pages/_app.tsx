@@ -15,6 +15,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  strong {
+    font-family: "Gordita Bold";
+    font-weight: normal;
+  }
 `;
 
 const theme = {

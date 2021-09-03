@@ -24,7 +24,8 @@ export const Line = styled.span`
 `;
 
 const Title = styled.h1`
-  font-family: "Gordita Thin";
+  font-weight: normal;
+  font-family: "Gordita Light";
   font-size: 26px;
   color: #222;
   letter-spacing: -0.34px;
@@ -38,13 +39,13 @@ const SubTitle = styled.h2`
   letter-spacing: 0.81px;
   margin-top: 14px;
   margin-bottom: 22px;
-  font-family: "Gordita Bold";
+  font-family: "Gordita Ultra";
 `;
 
 const Description = styled.p`
   font-size: 18px;
   line-height: 1.75;
-  font-family: "Gordita Thin";
+  font-family: "Gordita Light";
   color: #222;
 
   @media (min-width: 992px) {

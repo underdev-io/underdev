@@ -52,7 +52,7 @@ const Text = styled.p`
   max-width: 812px;
   font-size: 18px;
   line-height: 1.75;
-  font-family: "Gordita Thin";
+  font-family: "Gordita Light";
 
   @media (min-width: 992px) {
     font-size: 21px;
@@ -123,7 +123,7 @@ export const About = () => (
           <br />
           <br />
           We are ready to help you in every step of the way. Be an app, a
-          website or something in between -we:
+          website or someLightg in between -we:
           <br />
           <br />
           <ul>
