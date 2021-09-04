@@ -39,7 +39,7 @@ const Wrapper = styled.section`
   }
 `;
 
-const Text = styled.p`
+const Text = styled.div`
   max-width: 812px;
   font-size: 18px;
   line-height: 1.75;

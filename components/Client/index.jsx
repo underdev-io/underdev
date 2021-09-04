@@ -68,7 +68,7 @@ const ClientListItemImage = styled.img`
 `;
 
 export const Client = () => (
-  <Wrapper>
+  <Wrapper id="clients">
     <HeroUnit title="get to know" subtitle="our clients" alignItems="center" />
     <ClientList>
       <ClientListItem>

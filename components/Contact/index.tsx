@@ -49,7 +49,6 @@ const RightColumn = styled.form`
   row-gap: 20px;
   background: rgba(255, 255, 255, 0.01);
   border-radius: 6px;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 820px;
   margin-right: auto;

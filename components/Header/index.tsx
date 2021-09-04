@@ -65,7 +65,9 @@ export const Header = () => {
     const el = document.querySelector(event.currentTarget.getAttribute("href"));
 
     if (el) {
-      el.scrollIntoView();
+      setTimeout(function () {
+        el.scrollIntoView({ behavior: "smooth" });
+      });
     }
   };
 
@@ -112,7 +114,7 @@ export const Header = () => {
             onClick={handleButton}
             button
           >
-            <ListItemText>Contacts</ListItemText>
+            <ListItemText>Contact Us</ListItemText>
           </ListItem>
         </List>
       </Drawer>

@@ -6,6 +6,7 @@ import { About } from "../components/About";
 import { Contact } from "../components/Contact";
 import { Client } from "../components/Client";
 import { SocialDev } from "../components/SocialDev";
+import { Testimonials } from "../components/Testimonials";
 const HomePage: NextPage = (props: any) => {
   return (
     <>
@@ -18,6 +19,7 @@ const HomePage: NextPage = (props: any) => {
       <Home />
       <About />
       <Client />
+      <Testimonials />
       <SocialDev />
       <Contact />
     </>
