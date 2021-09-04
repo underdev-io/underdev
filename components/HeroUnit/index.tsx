@@ -32,7 +32,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.h2`
-  font-size: 42px;
+  font-size: 36px;
   line-height: 1.25;
   font-weight: bold;
   color: #222;
@@ -40,6 +40,10 @@ const SubTitle = styled.h2`
   margin-top: 14px;
   margin-bottom: 22px;
   font-family: "Gordita Ultra";
+
+  @media (min-width: 768px) {
+    font-size: 42px;
+  }
 `;
 
 const Description = styled.p`
