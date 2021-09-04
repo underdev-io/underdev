@@ -29,6 +29,7 @@ const Wrapper = styled.section`
     text-align: center;
 
     p {
+      margin-top: 40px;
       text-align: left;
     }
   }
@@ -58,21 +59,20 @@ export const Home = () => (
     <HeroUnit
       title={[
         "tech + human",
-        "development + ideas",
+        "idea + development",
         "fast communication + delivery",
-        "problem + solution",
+        "problem + experience",
       ]}
       subtitle={[
         "crafting ideas",
-        "intuitive solutions",
+        "creating solutions",
         "developing art",
         "changing the world",
       ]}
-      description="Let us bring you the best solutions while you can relax and focus on growing your business.
-      We are <strong>passionate about technology</strong> and convey new great projects to the digital world.
-      <br /><br />We are not <em>just another web and mobile development</em> company.<br />
-      We are also a <strong>startup to build great ideas</strong>.
-      <br /><br />During our <em>10+ years of experience</em>, we helped people and companies <strong>all over the world</strong> to achieve their goals and develop their full potential.<br /><br />We can help you too. 🚀"
+      description="Let us bring you creative solutions while you can relax and focus on growing your business.
+      <strong>We are passionate about technology and transforming real-world problems into digital products.</strong>
+      That's why we are not just another web and mobile development agency.
+      We are also a startup for unconventional great ideas."
     />
   </Wrapper>
 );

@@ -5,6 +5,7 @@ import { Home } from "../components/Home";
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";
 import { Client } from "../components/Client";
+import { SocialDev } from "../components/SocialDev";
 const HomePage: NextPage = (props: any) => {
   return (
     <>
@@ -17,6 +18,7 @@ const HomePage: NextPage = (props: any) => {
       <Home />
       <About />
       <Client />
+      <SocialDev />
       <Contact />
     </>
   );

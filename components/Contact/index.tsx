@@ -10,7 +10,7 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 
 const Wrapper = styled.section`
-  background-color: #00e9c5;
+  background-color: #fff;
   width: 100%;
   min-height: 100vh;
   padding: 25px;
@@ -147,8 +147,8 @@ export const Contact = () => {
     <Wrapper id="contact">
       <Container>
         <HeroUnit
-          title="We are curious to know you and your company better."
-          subtitle="Tell us how we can help you."
+          title="we are curious to know you and your company better."
+          subtitle="let's talk."
         />
         <RightColumn onSubmit={handleSubmit}>
           <TextField

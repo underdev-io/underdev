@@ -69,7 +69,7 @@ const ClientListItemImage = styled.img`
 
 export const Client = () => (
   <Wrapper>
-    <HeroUnit title="get in touch" subtitle="our clients" alignItems="center" />
+    <HeroUnit title="get to know" subtitle="our clients" alignItems="center" />
     <ClientList>
       <ClientListItem>
         <ClientListItemLink href="https://www.aveneusa.com/">

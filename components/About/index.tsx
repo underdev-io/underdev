@@ -7,9 +7,9 @@ import TechImage from "./techs.svg";
 const Wrapper = styled.section`
   background-color: #00e9c5;
   width: 100%;
-  min-height: 120vh;
   display: flex;
   padding: 50px;
+  min-height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -28,7 +28,6 @@ const Wrapper = styled.section`
 
   @media (min-width: 992px) {
     flex-direction: row;
-    min-height: 70vh;
 
     ${HeroUnitWrapper} {
       max-width: 600px;
@@ -38,14 +37,6 @@ const Wrapper = styled.section`
       max-width: 508px;
     }
   }
-`;
-
-const Title = styled.h2`
-  font-family: "Gordita Bold";
-  font-size: 40px;
-  margin-bottom: 10px;
-  border-top: 1px solid #222;
-  padding-top: 20px;
 `;
 
 const Text = styled.p`
@@ -86,44 +77,37 @@ export const About = () => (
   <>
     <Wrapper id="about">
       <HeroUnit
-        title={["We are goal diggers."]}
-        subtitle={["We believe that we can improve the world around us."]}
+        title={["we are goal diggers."]}
+        subtitle={["we believe that we can improve the world around us."]}
       />
       <RightColumn>
         <Text>
-          <strong>We love</strong> to work with technology but also with the
-          people behind it. <br />
-          <br />
-          <strong>We are</strong> always looking for the solution to problems,
+          We love to work with <strong>technology</strong> but also with the{" "}
+          <strong>people behind it</strong>. <br />
+          We are always looking for the <strong>solution to problems</strong>,
           be small or worldwide.
           <br />
+          We constantly <strong>challenge ourselves</strong>.
           <br />
-          <strong>We constantly</strong> challenge ourselves.
+          We count on <strong>highly skilled professionals</strong> in some of
+          the <strong>best technologies.</strong>
           <br />
-          <br />
-          <strong>To do so,</strong> we count on highly skilled professionals in
-          some of the best technologies.
-          <br />
-          <br />
-          We have <strong>10+ years of experience</strong> working with{" "}
-          <strong>startups</strong> as well as{" "}
-          <strong>large corporations</strong>, in many different projects, and{" "}
-          <strong>we absolutely give our best</strong> in every and each of
-          them.
+          We have <strong>10+ years of experience</strong> working with startups
+          as well as large corporations, and we <strong>give our best</strong>{" "}
+          in every project.
         </Text>
-        <TechList src={TechImage.src} />
+        <TechList
+          title="logos of the technologies we work with"
+          src={TechImage.src}
+        />
       </RightColumn>
     </Wrapper>
-    <Wrapper>
+    <Wrapper style={{ background: "#FFF" }}>
       <RightColumn>
-        <Text>
-          We will assist you beyond technical support, building technology
-          solutions combined with minimalist design, value-added content and a
-          human touch. We trust our processes and methods.
-          <br />
-          <br />
-          We are ready to help you in every step of the way. Be an app, a
-          website or someLightg in between -we:
+        <Text style={{ margin: "0 auto", maxWidth: "600px" }}>
+          We build technology solutions combined with minimalist design,
+          value-added content and a human touch. Be an app, a website or
+          something in between - we:
           <br />
           <br />
           <ul>
@@ -153,46 +137,34 @@ export const About = () => (
           <br />
         </Text>
       </RightColumn>
+      <HeroUnit
+        title={["our services"]}
+        subtitle={["we are ready to support you in every step of the way."]}
+      />
+    </Wrapper>
+    <Wrapper>
+      <HeroUnit
+        title={["our main stack"]}
+        subtitle={["some of the technologies we use on a daily basis."]}
+      />
       <RightColumn>
         <Text>
-          Also we praise for fast communication and delivery!
-          <br />
-          So, shall we?
-          <br />
-          <br />
-          This is our main stack:
-          <br />
-          <br />
           <strong>🧩 FRONTEND:</strong> React, React Native, Redux, Context API,
           ESLint, TypeScript, REST and GraphQL APIs.
+          <br />
           <br />
           <strong>💥 BACKEND:</strong> Strapi, Nest.js, Firebase, Node.js and
           Ruby on Rails.
           <br />
+          <br />
           <strong>🏦 DATABASES:</strong> PostgreSQL, MySQL and MongoDB.
+          <br />
           <br />
           <strong>⚙️ INFRASTRUCTURE:</strong> Amazon Web Services (AWS), S3,
           Docker, Compose, Nginx, Redis and Serverles.
           <br />
+          <br />
           <strong>🛠 CI/CD:</strong> Github Actions, Gitlab CI/CD, Jenkins.
-        </Text>
-      </RightColumn>
-    </Wrapper>
-    <Wrapper>
-      <RightColumn>
-        <Text>
-          <Title> social dev.</Title>
-          Almost 40% of public school students don´t have a access to internet
-          at home, according to a study of 2020, even after the pandemics and
-          distance learning.
-          <br />
-          <br />
-          We believe in part of our goal is to democratize information so that
-          more and more people can learn and study using the web.
-          <br />
-          <br />A percentage of your buy is reverted to existing social projects
-          as well as some of our own projects, like donating computers and
-          cellphones for those in need!
         </Text>
       </RightColumn>
     </Wrapper>
