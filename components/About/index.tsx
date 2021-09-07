@@ -4,7 +4,10 @@ import { Wrapper as HeroUnitWrapper } from "../HeroUnit";
 import { Wrapper as LogoWrapper } from "../Logo";
 import TechImage from "./techs.svg";
 
-const Wrapper = styled.section`
+interface WrapperProps {
+  reverse?: boolean;
+}
+const Wrapper = styled.section<WrapperProps>`
   background-color: #00e9c5;
   width: 100%;
   display: flex;
@@ -25,6 +28,8 @@ const Wrapper = styled.section`
     max-width: 100%;
     margin-bottom: 20px;
   }
+
+  ${({ reverse }) => reverse && `flex-direction: column-reverse;`}
 
   @media (min-width: 992px) {
     flex-direction: row;
@@ -102,7 +107,7 @@ export const About = () => (
         />
       </RightColumn>
     </Wrapper>
-    <Wrapper style={{ background: "#FFF" }}>
+    <Wrapper reverse style={{ background: "#FFF" }}>
       <RightColumn>
         <Text style={{ margin: "0 auto", maxWidth: "600px" }}>
           We build technology solutions combined with minimalist design,
