@@ -9,7 +9,7 @@ const Wrapper = styled.section`
   display: flex;
   padding: 50px;
   min-height: 100vh;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
 
