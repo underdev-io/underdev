@@ -82,7 +82,7 @@ export const Header = () => {
         <MdMenu color={primary} size="48px" />
       </MenuButton>
       <Drawer anchor="right" open={visible} onClose={handleClose}>
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "left", paddingLeft: 18 }}>
           <img src={TextLogo.src} alt="Underdev" width="120" height="120" />
         </div>
         <List style={{ width: 255 }} component="nav">
