@@ -4,6 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { Header } from "../../components/Header";
 import ReactPaginate from "react-paginate";
+import { getSortedPostsData } from "../../lib/posts";
 
 const Content = styled.main`
   padding: 15px;
@@ -138,19 +139,21 @@ const Blog: NextPage = (props: any) => {
       <Content>
         <FeaturedTitle>Últimos Posts</FeaturedTitle>
         <PostList>
-          {posts.map(({ url, title, author, date, excerpt }) => (
-            <PostListItem key={title}>
-              <Link href={url}>
-                <a>
-                  <h2>{title}</h2>
-                  <small>
-                    {getDate(date)} / Escrito por {author}
-                  </small>
-                  <p>{excerpt}</p>
-                </a>
-              </Link>
-            </PostListItem>
-          ))}
+          {props.posts.map(
+            ({ id, date, author, excerpt, title }: any, index: number) => (
+              <PostListItem key={index}>
+                <Link href={`/blog/${id}`}>
+                  <a>
+                    <h2>{title}</h2>
+                    <small>
+                      {getDate(date)} / Escrito por {author}
+                    </small>
+                    <p>{excerpt}</p>
+                  </a>
+                </Link>
+              </PostListItem>
+            )
+          )}
         </PostList>
         <Pagination>
           <ReactPaginate
@@ -170,5 +173,14 @@ const Blog: NextPage = (props: any) => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      posts: allPostsData,
+    },
+  };
+}
 
 export default Blog;
