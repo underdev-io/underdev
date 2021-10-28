@@ -10,6 +10,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Image from "next/image";
 import TextLogo from "../Logo/text.svg";
+import { useRouter } from "next/dist/client/router";
 
 const Wrapper = styled.header`
   width: 100%;
@@ -49,6 +50,7 @@ const MenuButton = styled.button`
 `;
 
 export const Header = () => {
+  const router = useRouter();
   const [visible, setVisible] = useState(false);
 
   const handleOpen = () => {
@@ -69,6 +71,11 @@ export const Header = () => {
         el.scrollIntoView({ behavior: "smooth" });
       });
     }
+  };
+
+  const handleLocale = () => {
+    router.push("/?locale=en");
+    handleClose();
   };
 
   return (
@@ -115,6 +122,14 @@ export const Header = () => {
             button
           >
             <ListItemText>Contact Us</ListItemText>
+          </ListItem>
+          <ListItem
+            component={"a"}
+            href="#contact"
+            onClick={handleLocale}
+            button
+          >
+            <ListItemText>Change to English</ListItemText>
           </ListItem>
         </List>
       </Drawer>

@@ -3,7 +3,7 @@ import { HeroUnit } from "../HeroUnit";
 import { Wrapper as HeroUnitWrapper } from "../HeroUnit";
 import { Wrapper as LogoWrapper } from "../Logo";
 import { TextField, Button } from "@material-ui/core";
-import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaMedium } from "react-icons/fa";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Paper from "@material-ui/core/Paper";
 import { useState } from "react";
@@ -209,9 +209,9 @@ export const Contact = () => {
           >
             <FaMedium size="36px" />
           </FooterListItem>
-          {/* <FooterListItem href="#">
+          <FooterListItem href="https://instagram.com/lhas_dev" target="_blank">
             <FaInstagram size="36px" />
-          </FooterListItem> */}
+          </FooterListItem>
           <FooterListItem
             href="https://www.linkedin.com/company/underdev-io/"
             target="_blank"

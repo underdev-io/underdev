@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import useLocale from "../../locale";
 import { HeroUnit, Line } from "../HeroUnit";
 import { Wrapper as HeroUnitWrapper } from "../HeroUnit";
 import { Logo, Wrapper as LogoWrapper } from "../Logo";
@@ -53,26 +54,26 @@ const Wrapper = styled.section`
   }
 `;
 
-export const Home = () => (
-  <Wrapper id="home">
-    <Logo />
-    <HeroUnit
-      title={[
-        "tech + human",
-        "idea + development",
-        "fast communication + delivery",
-        "problem + experience",
-      ]}
-      subtitle={[
-        "crafting ideas",
-        "creating solutions",
-        "developing art",
-        "changing the world",
-      ]}
-      description="Let us bring you creative solutions while you can relax and focus on growing your business.
-      <strong>We are passionate about technology and transforming real-world problems into digital products.</strong>
-      That's why we are not just another web and mobile development agency.
-      We are also a startup for unconventional great ideas."
-    />
-  </Wrapper>
-);
+export const Home = () => {
+  const { t } = useLocale();
+  return (
+    <Wrapper id="home">
+      <Logo />
+      <HeroUnit
+        title={[
+          "tech + human",
+          "idea + development",
+          "fast communication + delivery",
+          "problem + experience",
+        ]}
+        subtitle={[
+          "crafting ideas",
+          "creating solutions",
+          "developing art",
+          "changing the world",
+        ]}
+        description={t("HOME_DESCRIPTION")}
+      />
+    </Wrapper>
+  );
+};

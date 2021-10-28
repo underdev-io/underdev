@@ -77,6 +77,6 @@ export const SocialDev = () => (
         computers and cellphones for <strong>those in need</strong>.
       </Text>
     </RightColumn>
-    <HeroUnit title="underdev + social " subtitle={["social projects"]} />
+    <HeroUnit title="underdev + social" subtitle={["social projects"]} />
   </Wrapper>
 );

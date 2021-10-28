@@ -7,7 +7,16 @@ import { Contact } from "../components/Contact";
 import { Client } from "../components/Client";
 import { SocialDev } from "../components/SocialDev";
 import { Testimonials } from "../components/Testimonials";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 const HomePage: NextPage = (props: any) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const locale: any = router.query.locale || "pt";
+
+    window.localStorage.setItem("underdev:locale", locale);
+  }, [router.query.locale]);
   return (
     <>
       <Head>
