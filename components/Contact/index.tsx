@@ -8,6 +8,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Paper from "@material-ui/core/Paper";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import useLocale from "../../locale";
 
 const Wrapper = styled.section`
   background-color: #fff;
@@ -121,6 +122,8 @@ const FooterListItem = styled.a`
 `;
 
 export const Contact = () => {
+  const { t } = useLocale();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -145,16 +148,13 @@ export const Contact = () => {
   return (
     <Wrapper id="contact">
       <Container>
-        <HeroUnit
-          title="we are curious to know you and your company better."
-          subtitle="let's talk."
-        />
+        <HeroUnit title={t("CONTACT_TITLE")} subtitle={t("CONTACT_SUBTITLE")} />
         <RightColumn onSubmit={handleSubmit}>
           <TextField
             value={name}
             onChange={(event) => setName(event.target.value)}
             required
-            label="Your name"
+            label={t("CONTACT_NAME")}
             fullWidth
             variant="filled"
           />
@@ -162,7 +162,7 @@ export const Contact = () => {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             required
-            label="Your best e-mail"
+            label={t("CONTACT_EMAIL")}
             type="email"
             fullWidth
             variant="filled"
@@ -173,12 +173,12 @@ export const Contact = () => {
             required
             multiline
             minRows="10"
-            label="Tell us how we can help you."
+            label={t("CONTACT_MESSAGE")}
             fullWidth
             variant="filled"
           />
           <Button type="submit" variant="contained" color="primary" fullWidth>
-            Send contact
+            {t("CONTACT_SUBMIT")}
           </Button>
           {(success || loading) && (
             <Paper
@@ -189,7 +189,7 @@ export const Contact = () => {
               }}
             >
               {loading && <CircularProgress />}
-              {success && "Thanks! We'll contact you soon. ✌️"}
+              {success && t("CONTACT_THANKS")}
             </Paper>
           )}
         </RightColumn>

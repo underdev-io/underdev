@@ -13,6 +13,7 @@ import mlabs from "../Client/ClientLogo/mLabs.svg";
 import nubank from "../Client/ClientLogo/nuBank.svg";
 import downy from "../Client/ClientLogo/Downy.svg";
 import avene from "../Client/ClientLogo/Avene.svg";
+import useLocale from "../../locale";
 
 const Wrapper = styled.section`
   width: 100%;
@@ -67,68 +68,75 @@ const ClientListItemImage = styled.img`
   padding: 10px;
 `;
 
-export const Client = () => (
-  <Wrapper id="clients">
-    <HeroUnit title="get to know" subtitle="our clients" alignItems="center" />
-    <ClientList>
-      <ClientListItem>
-        <ClientListItemLink href="https://www.aveneusa.com/">
-          <ClientListItemImage src={avene.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-      <ClientListItem>
-        <ClientListItemLink href="https://br.adp.com/">
-          <ClientListItemImage src={adp.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-      <ClientListItem>
-        <ClientListItemLink href="https://americanas.com.br/">
-          <ClientListItemImage src={americanas.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-      <ClientListItem>
-        <ClientListItemLink href="https://downy.com.br/pt-br/">
-          <ClientListItemImage src={downy.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-      <ClientListItem>
-        <ClientListItemLink href="https://espm.br/">
-          <ClientListItemImage src={espm.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-      <ClientListItem>
-        <ClientListItemLink href="https://institucional.hortifruti.com.br/">
-          <ClientListItemImage src={hortifruti.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-      <ClientListItem>
-        <ClientListItemLink href="https://mcdonalds.com.br/">
-          <ClientListItemImage src={mcdonalds.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-    </ClientList>
+export const Client = () => {
+  const { t } = useLocale();
+  return (
+    <Wrapper id="clients">
+      <HeroUnit
+        title={t("CLIENTS_TITLE")}
+        subtitle={t("CLIENTS_SUBTITLE")}
+        alignItems="center"
+      />
+      <ClientList>
+        <ClientListItem>
+          <ClientListItemLink href="https://www.aveneusa.com/">
+            <ClientListItemImage src={avene.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+        <ClientListItem>
+          <ClientListItemLink href="https://br.adp.com/">
+            <ClientListItemImage src={adp.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+        <ClientListItem>
+          <ClientListItemLink href="https://americanas.com.br/">
+            <ClientListItemImage src={americanas.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+        <ClientListItem>
+          <ClientListItemLink href="https://downy.com.br/pt-br/">
+            <ClientListItemImage src={downy.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+        <ClientListItem>
+          <ClientListItemLink href="https://espm.br/">
+            <ClientListItemImage src={espm.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+        <ClientListItem>
+          <ClientListItemLink href="https://institucional.hortifruti.com.br/">
+            <ClientListItemImage src={hortifruti.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+        <ClientListItem>
+          <ClientListItemLink href="https://mcdonalds.com.br/">
+            <ClientListItemImage src={mcdonalds.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+      </ClientList>
 
-    <ClientList>
-      <ClientListItem>
-        <ClientListItemLink href="https://www.mlabs.com.br/">
-          <ClientListItemImage src={mlabs.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-      <ClientListItem>
-        <ClientListItemLink href="https://nubank.com.br/">
-          <ClientListItemImage src={nubank.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-      <ClientListItem>
-        <ClientListItemLink href="https://pepsico.com.br/">
-          <ClientListItemImage src={pepsico.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-      <ClientListItem>
-        <ClientListItemLink href="https://udacity.com/">
-          <ClientListItemImage src={udacity.src} />
-        </ClientListItemLink>
-      </ClientListItem>
-    </ClientList>
-  </Wrapper>
-);
+      <ClientList>
+        <ClientListItem>
+          <ClientListItemLink href="https://www.mlabs.com.br/">
+            <ClientListItemImage src={mlabs.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+        <ClientListItem>
+          <ClientListItemLink href="https://nubank.com.br/">
+            <ClientListItemImage src={nubank.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+        <ClientListItem>
+          <ClientListItemLink href="https://pepsico.com.br/">
+            <ClientListItemImage src={pepsico.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+        <ClientListItem>
+          <ClientListItemLink href="https://udacity.com/">
+            <ClientListItemImage src={udacity.src} />
+          </ClientListItemLink>
+        </ClientListItem>
+      </ClientList>
+    </Wrapper>
+  );
+};

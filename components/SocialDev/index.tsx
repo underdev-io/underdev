@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import useLocale from "../../locale";
 import { HeroUnit } from "../HeroUnit";
 import { Wrapper as HeroUnitWrapper } from "../HeroUnit";
 import { Wrapper as LogoWrapper } from "../Logo";
@@ -61,22 +62,16 @@ const RightColumn = styled.div`
   }
 `;
 
-export const SocialDev = () => (
-  <Wrapper>
-    <RightColumn>
-      <Text style={{ margin: "0 auto", maxWidth: "600px" }}>
-        Almost <strong>40% of public school students</strong> don´t have a
-        access to internet at home, according to a study of 2020, even after the
-        pandemics and distance learning.
-        <br />
-        We believe in <strong>democratization of knowledge</strong> so that more
-        people can learn and study using the internet.
-        <br />
-        <br />A <strong>percentage</strong> of your buy is reverted to existing
-        social projects as well as some of our own projects, like donating
-        computers and cellphones for <strong>those in need</strong>.
-      </Text>
-    </RightColumn>
-    <HeroUnit title="underdev + social" subtitle={["social projects"]} />
-  </Wrapper>
-);
+export const SocialDev = () => {
+  const { t } = useLocale();
+  return (
+    <Wrapper>
+      <RightColumn>
+        <Text style={{ margin: "0 auto", maxWidth: "600px" }}>
+          {t("SOCIAL_TEXT")}
+        </Text>
+      </RightColumn>
+      <HeroUnit title={t("SOCIAL_TITLE")} subtitle={t("SOCIAL_SUBTITLE")} />
+    </Wrapper>
+  );
+};

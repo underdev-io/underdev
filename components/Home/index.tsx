@@ -61,16 +61,16 @@ export const Home = () => {
       <Logo />
       <HeroUnit
         title={[
-          "tech + human",
-          "idea + development",
-          "fast communication + delivery",
-          "problem + experience",
+          t("HOME_TITLE_1"),
+          t("HOME_TITLE_2"),
+          t("HOME_TITLE_3"),
+          t("HOME_TITLE_4"),
         ]}
         subtitle={[
-          "crafting ideas",
-          "creating solutions",
-          "developing art",
-          "changing the world",
+          t("HOME_SUBTITLE_1"),
+          t("HOME_SUBTITLE_2"),
+          t("HOME_SUBTITLE_3"),
+          t("HOME_SUBTITLE_4"),
         ]}
         description={t("HOME_DESCRIPTION")}
       />

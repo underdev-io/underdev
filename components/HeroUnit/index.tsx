@@ -14,6 +14,7 @@ export const Wrapper = styled.aside<WrapperProps>`
   margin: 0 auto;
   position: relative;
   align-items: ${(props) => props.alignItems};
+  text-align: ${(props) => props.alignItems};
 `;
 
 export const Line = styled.span`

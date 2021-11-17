@@ -8,7 +8,7 @@ export default {
   HOME_SUBTITLE_3: "developing art",
   HOME_SUBTITLE_4: "changing the world",
   HOME_DESCRIPTION:
-    "Let us bring you creative solutions while you can relax and focus on growing your business. <strong>We are passionate about technology and transforming real-world problems into digital products.</strong> That's why we are not just another web and mobile development agency. We are also a startup for unconventional great ideas.",
+    "We create creative solutions while you relax and focus on growing your business. <strong>We are passionate about technology and we love to transform real-world problems into digital products.</strong> That's why we are not just another web and mobile development agency. We are also a startup for unconventional great ideas.",
   ABOUT_TITLE: "we are goal diggers.",
   ABOUT_SUBTITLE: "we believe that we can improve the world around us.",
   ABOUT_TEXT:
@@ -52,4 +52,5 @@ export default {
   CONTACT_EMAIL: "Your best e-mail",
   CONTACT_MESSAGE: "Tell us how we can help you.",
   CONTACT_SUBMIT: "Send contact",
+  CONTACT_THANKS: "Thanks! We'll contact you soon. ✌️",
 };

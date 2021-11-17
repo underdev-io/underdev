@@ -12,6 +12,7 @@ import Image4 from "./4.jpg";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import useLocale from "../../locale";
 
 const Wrapper = styled.section`
   background-color: #222;
@@ -117,84 +118,71 @@ const TestimonialsListItemImage = styled.div`
   overflow: hidden;
 `;
 
-export const Testimonials = () => (
-  <Wrapper id="testimonials">
-    <HeroUnit title="our customers love us!" subtitle={["testimonials"]} />
-    <TestimonialsList
-      infiniteLoop
-      emulateTouch
-      swipeable
-      showStatus={false}
-      interval={5000}
-      autoPlay
-      stopOnHover={false}
-      showThumbs={false}
-      renderArrowPrev={(onClickHandler) => (
-        <button className="prev" onClick={onClickHandler}>
-          <MdKeyboardArrowLeft size="60px" />
-        </button>
-      )}
-      renderArrowNext={(onClickHandler) => (
-        <button className="next" onClick={onClickHandler}>
-          <MdKeyboardArrowRight size="60px" />
-        </button>
-      )}
-    >
-      <TestimonialsListItem>
-        <TestimonialsListItemImage>
-          <img src={Image1.src} alt="" />
-        </TestimonialsListItemImage>
-        <TestimonialsListItemText>
-          <p>
-            "Loved to work with the Underdev team. They have a didactic approach
-            and communicate very well, making the process intuitive and fun.
-            They are trustworthy and it's very clear that they are experts on
-            what they are doing."
-          </p>
-          <strong>Paul T.</strong>
-        </TestimonialsListItemText>
-      </TestimonialsListItem>
-      <TestimonialsListItem>
-        <TestimonialsListItemImage>
-          <img src={Image2.src} alt="" />
-        </TestimonialsListItemImage>
-        <TestimonialsListItemText>
-          <p>
-            "They are very detail-oriented and that's exactly what makes their
-            work very well executed from the beginning to the end, from the
-            tiniest detail to the final touches. Everything they do is with
-            outstanding competence. It was a pleasure to work with Underdev."
-          </p>
-          <strong>Sabrina F.</strong>
-        </TestimonialsListItemText>
-      </TestimonialsListItem>
-      <TestimonialsListItem>
-        <TestimonialsListItemImage>
-          <img src={Image3.src} alt="" />
-        </TestimonialsListItemImage>
-        <TestimonialsListItemText>
-          <p>
-            "Underdev professionals has some serious skills. They prove to have
-            full control of the situation even through the greatest atrocities.
-            I hope I have the opportunity to work with this great team again."
-          </p>
-          <strong>Adam K.</strong>
-        </TestimonialsListItemText>
-      </TestimonialsListItem>
-      <TestimonialsListItem>
-        <TestimonialsListItemImage>
-          <img src={Image4.src} alt="" />
-        </TestimonialsListItemImage>
-        <TestimonialsListItemText>
-          <p>
-            "This guys are viewing things from the top. They have a holistic
-            approach and know everything needed for a digital product to work.
-            They basically find the solution to anything. Any project you give
-            to them, they jump on it like a lion on a prey."
-          </p>
-          <strong>Amanda S.</strong>
-        </TestimonialsListItemText>
-      </TestimonialsListItem>
-    </TestimonialsList>
-  </Wrapper>
-);
+export const Testimonials = () => {
+  const { t } = useLocale();
+  return (
+    <Wrapper id="testimonials">
+      <HeroUnit
+        title={t("TESTIMONIALS_TITLE")}
+        subtitle={t("TESTIMONIALS_SUBTITLE")}
+      />
+      <TestimonialsList
+        infiniteLoop
+        emulateTouch
+        swipeable
+        showStatus={false}
+        interval={5000}
+        autoPlay
+        stopOnHover={false}
+        showThumbs={false}
+        renderArrowPrev={(onClickHandler) => (
+          <button className="prev" onClick={onClickHandler}>
+            <MdKeyboardArrowLeft size="60px" />
+          </button>
+        )}
+        renderArrowNext={(onClickHandler) => (
+          <button className="next" onClick={onClickHandler}>
+            <MdKeyboardArrowRight size="60px" />
+          </button>
+        )}
+      >
+        <TestimonialsListItem>
+          <TestimonialsListItemImage>
+            <img src={Image1.src} alt="" />
+          </TestimonialsListItemImage>
+          <TestimonialsListItemText>
+            <p>{t("TESTIMONIALS_TEXT_1")}</p>
+            <strong>Paul T.</strong>
+          </TestimonialsListItemText>
+        </TestimonialsListItem>
+        <TestimonialsListItem>
+          <TestimonialsListItemImage>
+            <img src={Image2.src} alt="" />
+          </TestimonialsListItemImage>
+          <TestimonialsListItemText>
+            <p>{t("TESTIMONIALS_TEXT_2")}</p>
+            <strong>Sabrina F.</strong>
+          </TestimonialsListItemText>
+        </TestimonialsListItem>
+        <TestimonialsListItem>
+          <TestimonialsListItemImage>
+            <img src={Image3.src} alt="" />
+          </TestimonialsListItemImage>
+          <TestimonialsListItemText>
+            <p>{t("TESTIMONIALS_TEXT_3")}</p>
+            <strong>Adam K.</strong>
+          </TestimonialsListItemText>
+        </TestimonialsListItem>
+        <TestimonialsListItem>
+          <TestimonialsListItemImage>
+            <img src={Image4.src} alt="" />
+          </TestimonialsListItemImage>
+          <TestimonialsListItemText>
+            <p>{t("TESTIMONIALS_TEXT_4")}</p>
+            <strong>Amanda S.</strong>
+          </TestimonialsListItemText>
+        </TestimonialsListItem>
+      </TestimonialsList>
+    </Wrapper>
+  );
+};

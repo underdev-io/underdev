@@ -73,8 +73,8 @@ export const Header = () => {
     }
   };
 
-  const handleLocale = () => {
-    router.push("/?locale=en");
+  const handleLocale = (target: string) => () => {
+    router.push(`/?locale=${target}`);
     handleClose();
   };
 
@@ -123,14 +123,16 @@ export const Header = () => {
           >
             <ListItemText>Contact Us</ListItemText>
           </ListItem>
-          <ListItem
-            component={"a"}
-            href="#contact"
-            onClick={handleLocale}
-            button
-          >
-            <ListItemText>Change to English</ListItemText>
-          </ListItem>
+          {(router.query.locale === "pt" || !router.query.locale) && (
+            <ListItem component={"a"} onClick={handleLocale("en")} button>
+              <ListItemText>Change to English (US)</ListItemText>
+            </ListItem>
+          )}
+          {router.query.locale === "en" && (
+            <ListItem component={"a"} onClick={handleLocale("pt")} button>
+              <ListItemText>Mudar para Português (BR)</ListItemText>
+            </ListItem>
+          )}
         </List>
       </Drawer>
     </Wrapper>

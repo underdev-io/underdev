@@ -1,13 +1,9 @@
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import en from "./en";
 import pt from "./pt";
 
-const t = (key: string) => {
-  const locale =
-    typeof window !== "undefined"
-      ? window.localStorage.getItem("underdev:locale") || "pt"
-      : "pt";
-
+const t = (locale: string) => (key: string) => {
   const tree: any = {
     en,
     pt,
@@ -17,8 +13,11 @@ const t = (key: string) => {
 };
 
 const useLocale = () => {
+  const router = useRouter();
+  const locale = router.query.locale ? String(router.query.locale) : "pt";
+
   return {
-    t,
+    t: t(locale),
   };
 };
 
