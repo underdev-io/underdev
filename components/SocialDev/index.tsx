@@ -67,9 +67,10 @@ export const SocialDev = () => {
   return (
     <Wrapper>
       <RightColumn>
-        <Text style={{ margin: "0 auto", maxWidth: "600px" }}>
-          {t("SOCIAL_TEXT")}
-        </Text>
+        <Text
+          dangerouslySetInnerHTML={{ __html: t("SOCIAL_TEXT") }}
+          style={{ margin: "0 auto", maxWidth: "600px" }}
+        />
       </RightColumn>
       <HeroUnit title={t("SOCIAL_TITLE")} subtitle={t("SOCIAL_SUBTITLE")} />
     </Wrapper>

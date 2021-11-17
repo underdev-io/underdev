@@ -96,17 +96,17 @@ export const About = () => {
       <Wrapper reverse style={{ background: "#FFF" }}>
         <RightColumn>
           <Text style={{ margin: "0 auto", maxWidth: "600px" }}>
-            {t("SERVICES_TEXT_1")}
+            <div dangerouslySetInnerHTML={{ __html: t("SERVICES_TEXT_1") }} />
             <br />
             <br />
             <ul>
-              <li>{t("SERVICES_TEXT_2")}</li>
-              <li>{t("SERVICES_TEXT_3")}</li>
-              <li>{t("SERVICES_TEXT_4")}</li>
-              <li>{t("SERVICES_TEXT_5")}</li>
-              <li>{t("SERVICES_TEXT_6")}</li>
-              <li>{t("SERVICES_TEXT_7")}</li>
-              <li>{t("SERVICES_TEXT_8")}</li>
+              <li dangerouslySetInnerHTML={{ __html: t("SERVICES_TEXT_2") }} />
+              <li dangerouslySetInnerHTML={{ __html: t("SERVICES_TEXT_3") }} />
+              <li dangerouslySetInnerHTML={{ __html: t("SERVICES_TEXT_4") }} />
+              <li dangerouslySetInnerHTML={{ __html: t("SERVICES_TEXT_5") }} />
+              <li dangerouslySetInnerHTML={{ __html: t("SERVICES_TEXT_6") }} />
+              <li dangerouslySetInnerHTML={{ __html: t("SERVICES_TEXT_7") }} />
+              <li dangerouslySetInnerHTML={{ __html: t("SERVICES_TEXT_8") }} />
             </ul>
             <br />
           </Text>
