@@ -123,6 +123,14 @@ export const Header = () => {
           >
             <ListItemText>Contact Us</ListItemText>
           </ListItem>
+          <ListItem
+            component={"a"}
+            href="https://blog.underdev.io"
+            target="_blank"
+            button
+          >
+            <ListItemText>Blog</ListItemText>
+          </ListItem>
           {(router.query.locale === "pt" || !router.query.locale) && (
             <ListItem component={"a"} onClick={handleLocale("en")} button>
               <ListItemText>Change to English (US)</ListItemText>

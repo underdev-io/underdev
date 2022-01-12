@@ -49,8 +49,6 @@ const HomePage: NextPage = (props: any) => {
       <Home />
       <About />
       <Client />
-      <Testimonials />
-      <SocialDev />
       <Contact />
     </>
   );
